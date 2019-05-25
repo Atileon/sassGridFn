@@ -1,0 +1,17 @@
+.container-test{
+    width: columns(12,'lg');
+    border: 1px solid red;
+    margin: 0 auto;
+    .wrapper-test{
+        .column-test{
+            width: columns(1,'sm',in);
+            background: red;
+        }
+    }
+}
+
+@media (max-width:767px){
+    .container-test{
+        width: columns(2,'sm')
+    }
+}

@@ -1,0 +1,47 @@
+$viewports: (
+  lg: (
+    base: 992,
+    container: 928,
+    col: 59,
+    gap: 20,
+    max-cols: 12
+  ),
+  md: (
+    base: 768,
+    container: 724,
+    col: 42,
+    gap: 20,
+    max-cols: 12
+  ),
+  sm: (
+    base: 320,
+    container: 280,
+    col: 135,
+    gap: 10,
+    max-cols: 2
+  )
+);
+
+@function columns($num, $viewport: 'lg', $into: null,$viewportsMap:$viewports) {
+  $curBreak: map-get($viewportsMap, $viewport);
+
+  $viewContainer: map-get($curBreak, base);
+  $column: map-get($curBreak, col);
+  $gap: map-get($curBreak, gap);
+
+  $max-cols: map-get($curBreak, max-cols);
+  @if($num>$max-cols){
+      $num:$max-cols;
+  }
+  @if ($into== "in") {
+    $viewContainer: map-get($curBreak, container);
+  }
+  $totalColumns: $column * 100 / $viewContainer;
+  $vargap: $gap * 100 / $viewContainer;
+  $totalgaps: ($num - 1) * $vargap;
+
+  $total: ($num * $totalColumns) + $totalgaps;
+  @return $total#{"%"};
+}
+
+
