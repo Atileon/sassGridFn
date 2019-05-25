@@ -1,32 +1,24 @@
-# Webpack Frontend Starterkit
+# Grid Function for
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/wbkd/webpack-starter.svg)](https://greenkeeper.io/)
+---
 
-A lightweight foundation for your next webpack based frontend project.
+A simple function to handle custom grid trying to avoid bootstrap if there's only need of grid
 
+> This function could be extended/modified
 
-### Installation
+## Use
 
+Just declare on your sass rule the columns as follow:
+
+```sass
+.element{
+    /**
+    * $param number= number of columns;
+    * $param viewport = Viewport could be :lg,md,sm;
+    * $param scope = if columns are into container(another 12 columns) set 'in'
+    *                   otherwise don't declare anything;
+    **/
+
+    width: columns(number,viewport,scope);
+}
 ```
-npm install
-```
-
-### Start Dev Server
-
-```
-npm start
-```
-
-### Build Prod Version
-
-```
-npm run build
-```
-
-### Features:
-
-* ES6 Support via [babel](https://babeljs.io/) (v7)
-* SASS Support via [sass-loader](https://github.com/jtangelder/sass-loader)
-* Linting via [eslint-loader](https://github.com/MoOx/eslint-loader)
-
-When you run `npm run build` we use the [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) to move the css to a separate file. The css file gets included in the head of the `index.html`.
