@@ -1,4 +1,4 @@
-# Grid Function for
+# Grid Sass Function
 
 ---
 
