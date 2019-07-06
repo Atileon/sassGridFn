@@ -38,3 +38,44 @@
     }
   }
 }
+
+// custom radio
+.custom-radio {
+  &::before {
+    display: inline-block;
+  }
+  input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    &:checked {
+      & + span {
+        &::after {
+          width: 70%;
+          height: 70%;
+        }
+      }
+    }
+  }
+  span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+      background: black;
+      border-radius: 50%;
+      transition: all 0.3s cubic-bezier(0, -2, 1, 2.2);
+    }
+  }
+}

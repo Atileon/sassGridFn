@@ -14,7 +14,7 @@ export default class FormValidator {
   }
   trimInputs(form) {
     let inputs = form.querySelectorAll("input:required");
-    console.log(inputs);
+    // console.log(inputs);
     for (let input of inputs) {
       input.addEventListener("focusout", () => {
         console.log("-" + input.value + "-");
@@ -23,13 +23,26 @@ export default class FormValidator {
       });
     }
   }
+  ajaxCall(form) {
+    let url = "/";
+    let data = new FormData(form);
+    fetch(url, {
+      method: "post",
+      body: data
+    }).then(resp => {
+      resp.text().then(function(txt) {
+        console.log(txt);
+      });
+    });
+  }
   checkValids(form) {
     let submitBtn = form.querySelector(this.SELECTORS.submitBtn);
 
-    submitBtn.addEventListener("click", () => {
-      console.log(form);
+    submitBtn.addEventListener("click", e => {
       if (form.checkValidity()) {
         console.log("valid");
+        e.preventDefault();
+        this.ajaxCall(form);
       } else {
         console.error("invalid inputs");
         form.classList.add(this.checkValidsClass);
