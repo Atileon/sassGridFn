@@ -78,18 +78,40 @@ form.check-validation {
     &[type="radio"] {
       &:required {
         &:invalid {
-          & + span {
-            border: 1px solid red;
-            box-shadow: 0px 1px 10px rgba(255, 0, 0, 0.6);
+          & ~ span {
+            &.radio,
+            &.checkbox {
+              border: 1px solid red;
+              box-shadow: 0px 1px 10px rgba(255, 0, 0, 0.6);
+            }
           }
         }
       }
     }
   }
   //set labels when show validation
-  label {
-    &:after {
-      content: attr(data-err-message);
+  input {
+    &:required {
+      &:invalid {
+        & ~ span {
+          &[data-err-message] {
+            &:after {
+              content: attr(data-err-message);
+              color: red;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      &:valid {
+        & ~ span {
+          &[data-err-message] {
+            &:after {
+              content: "Thanks!";
+            }
+          }
+        }
+      }
     }
   }
 }

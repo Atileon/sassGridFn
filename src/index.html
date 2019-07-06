@@ -8,9 +8,10 @@
   <body>
     <div class="container">
       <h1>TESTING FORMS</h1>
-      <form action="/" method="POST" class="form" data-form-validation="true">
-        <label data-label="name" data-err-message="Non essere timido">
+      <form action="/" method="" class="form" data-form-validation="true">
+        <label data-label="name">
           <input type="text" name="name" placeholder="Name" required />
+          <span  data-err-message="Non essere timido"></span>
         </label>
         <label data-label="email" data-err-message="inserire indirizzo email">
           <input
@@ -19,10 +20,12 @@
             placeholder="Insert email"
             required
           />
+          <span data-err-message="Non essere timido"></span>
         </label>
 
         <label data-label="password" data-err-message="Password richiesta">
           <input type="password" name="password" required />
+          <span data-err-message="Non essere timido"></span>
         </label>
         <label data-label="date">
           <input type="date" name="date" />
@@ -33,7 +36,8 @@
           data-err-message="Selezionare prego"
         >
           <input type="checkbox" name="check-one" required />
-          <span></span>
+          <span class="checkbox"></span>
+          <span data-err-message="Non essere timido"></span>
         </label>
 
         <label
@@ -42,7 +46,8 @@
           data-err-message="selezionare prego"
         >
           <input type="radio" name="radio-one" required />
-          <span></span>
+          <span class="radio"></span>
+          <span data-err-message="Non essere timido"></span>
         </label>
         <label
           data-label="select"
@@ -50,7 +55,8 @@
           data-err-message="selezionare un'opzione"
         >
           <input type="radio" name="radio-one" required />
-          <span></span>
+          <span class='radio'></span>
+          <span data-err-message="seleziona uno"></span>
         </label>
         <button type="submit">Submit</button>
       </form>
