@@ -1,0 +1,40 @@
+// custom checkbox
+.custom-check {
+  &::before {
+    display: inline-block;
+  }
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    &:checked {
+      & + span {
+        background: rgb(119, 196, 119);
+        &:before {
+          left: 50%;
+        }
+      }
+    }
+  }
+  span {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 10px;
+    background: rgb(173, 167, 167);
+    border-radius: 5px;
+    transition: all 0.7s ease-in-out;
+    &::before {
+      content: "";
+      display: block;
+      width: 50%;
+      height: 100%;
+      background: rgb(58, 42, 116);
+      border-radius: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}

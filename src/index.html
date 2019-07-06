@@ -6,80 +6,41 @@
     <title>webpack starterkit</title>
   </head>
   <body>
-    <div class="container-test">
-      <div class="wrapper-test">
-        <div class="column-test">
-          TEST COL
-        </div>
-      </div>
-    </div>
-    <!-- <div class="container">
-      <div class="wrapper">
-        <figure>
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcset="https://picsum.photos/600/800"
-            />
-            <source
-              media="(max-width: 767px)"
-              srcset="https://picsum.photos/300/400"
-            />
-            <img src="https://picsum.photos/200/300" alt="" />
-          </picture>
-        </figure>
-        <div class="collection-cards to-right">
-          <div class="card-item">
-            <div class="item-wrapper">
-              <div
-                class="image"
-                style="background-image:url('https://picsum.photos/200/300')"
-              ></div>
-              <div class="text-card">
-                <p>Text card</p>
-                <p>second text</p>
-              </div>
-            </div>
-          </div>
+    <div class="container">
+      <h1>TESTING FORMS</h1>
+      <form action="/" class="form" data-form-validation="true">
+        <label data-label="name">
+          <input type="text" name="name" placeholder="Name" required />
+        </label>
+        <label data-label="email">
+          <input
+            type="email"
+            name="email"
+            
+            placeholder="Insert email"
+            required
+          />
+        </label>
 
-          <div class="card-item">
-            <div class="item-wrapper">
-              <div
-                class="image"
-                style="background-image:url('https://picsum.photos/200/300')"
-              ></div>
-              <div class="text-card">
-                <p>Text card</p>
-                <p>second text</p>
-              </div>
-            </div>
-          </div>
-          <div class="card-item">
-            <div class="item-wrapper">
-              <div
-                class="image"
-                style="background-image:url('https://picsum.photos/200/300')"
-              ></div>
-              <div class="text-card">
-                <p>Text card</p>
-                <p>second text</p>
-              </div>
-            </div>
-          </div>
-          <div class="card-item">
-            <div class="item-wrapper">
-              <div
-                class="image"
-                style="background-image:url('https://picsum.photos/200/300')"
-              ></div>
-              <div class="text-card">
-                <p>Text card</p>
-                <p>second text</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
+        <label data-label="password">
+          <input type="password" name="password"  required />
+        </label>
+        <label data-label="date">
+          <input type="date" name="date"  />
+        </label>
+        <label data-label="select" class="custom-check">
+          <input type="checkbox" name="check-one"  required />
+          <span></span>
+        </label>
+
+        <label data-label="select">
+          <input type="radio" name="radio-one"  required />
+        </label>
+        <label data-label="select">
+          <input type="radio" name="radio-one"  required />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   </body>
 </html>
