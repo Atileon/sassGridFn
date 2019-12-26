@@ -9,55 +9,67 @@
     <div class="container">
       <h1>TESTING FORMS</h1>
       <form action="/" method="" class="form" data-form-validation="true">
-        <label data-label="name">
-          <input type="text" name="name" placeholder="Name" required />
-          <span  data-err-message="Non essere timido"></span>
-        </label>
-        <label data-label="email" data-err-message="inserire indirizzo email">
-          <input
-            type="email"
-            name="email"
-            placeholder="Insert email"
-            required
-          />
-          <span data-err-message="Non essere timido"></span>
-        </label>
-
-        <label data-label="password" data-err-message="Password richiesta">
-          <input type="password" name="password" required />
-          <span data-err-message="Non essere timido"></span>
-        </label>
-        <label data-label="date">
-          <input type="date" name="date" />
-        </label>
-        <label
-          data-label="select"
-          class="custom-check"
-          data-err-message="Selezionare prego"
-        >
-          <input type="checkbox" name="check-one" required />
-          <span class="checkbox"></span>
-          <span data-err-message="Non essere timido"></span>
-        </label>
-
-        <label
-          data-label="select"
-          class="custom-radio"
-          data-err-message="selezionare prego"
-        >
-          <input type="radio" name="radio-one" required />
-          <span class="radio"></span>
-          <span data-err-message="Non essere timido"></span>
-        </label>
-        <label
-          data-label="select"
-          class="custom-radio"
-          data-err-message="selezionare un'opzione"
-        >
-          <input type="radio" name="radio-one" required />
-          <span class='radio'></span>
-          <span data-err-message="seleziona uno"></span>
-        </label>
+        <div class='form__field'>
+            <label data-label="name">
+              <input type="text" name="name" pattern="[w]{2,}" placeholder="Name"  />
+            </label>
+            <span  data-err-message="Non essere timido"></span>
+        </div>
+        <div class='form__field'>
+            <label data-label="email" data-err-message="inserire indirizzo email">
+              <input
+                type="email"
+                name="email"
+                placeholder="Insert email"
+                
+              />
+            </label>
+            <span data-err-message="Non essere timido"></span>
+        </div>
+        <div class='form__field'>
+            <label data-label="password" data-err-message="Password richiesta">
+              <input type="password" name="password"  />
+            </label>
+            <span data-err-message="Non essere timido"></span>
+        </div>
+        <div class='form__field'>
+            <label data-label="date">
+              <input type="date" name="date" />
+            </label>
+        </div>
+        <div class='form__field'>
+            <label
+              data-label="select"
+              class="custom-check"
+              data-err-message="Selezionare prego"
+            >
+              <input type="checkbox" name="check-one"  />
+              <span class="checkbox"></span>
+            </label>
+            <span data-err-message="Non essere timido"></span>
+        </div>
+        <div class='form__field'>
+            <label
+              data-label="select"
+              class="custom-radio"
+              data-err-message="selezionare prego"
+            >
+              <input type="radio" name="radio-one"  />
+              <span class="radio"></span>
+            </label>
+            <span data-err-message="Non essere timido"></span>
+        </div>
+        <div class='form__field'>
+            <label
+              data-label="select"
+              class="custom-radio"
+              data-err-message="selezionare un'opzione"
+            >
+              <input type="radio" name="radio-one"  />
+              <span class='radio'></span>
+            </label>
+            <span data-err-message="seleziona uno"></span>
+        </div>
         <button type="submit">Submit</button>
       </form>
     </div>

@@ -16,7 +16,7 @@ export default class FormValidator {
     let inputs = form.querySelectorAll("input:required");
     // console.log(inputs);
     for (let input of inputs) {
-      input.addEventListener("focusout", () => {
+      input.addEventListener("blur", () => {
         console.log("-" + input.value + "-");
         input.value = input.value.trim();
         console.log("-" + input.value + "-after");
@@ -49,13 +49,21 @@ export default class FormValidator {
       }
     });
   }
-  init() {
+  setPatterns(){
+      
+  }
+  render() {
     console.log("Form Validator ignited");
     let allForms = document.querySelectorAll(this.SELECTORS.main);
     for (let form of allForms) {
       this.checkInputs(form);
       this.trimInputs(form);
       this.checkValids(form);
+    }
+  }
+  init() {
+    if (document.querySelector(this.SELECTORS.main)) {
+      this.render();
     }
   }
 }
